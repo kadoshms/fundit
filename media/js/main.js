@@ -7,7 +7,9 @@ requirejs.config({
 	  'snap'			:	'vendor/snap.svg/dist/snap.svg-min',
 	  'mustache'		:	'vendor/mustache/mustache.min',
 	  'backbone-validation'	:	'vendor/backbone-validation/dist/backbone-validation-amd-min',
-	  'stickit'			:	'vendor/backbone.stickit/backbone.stickit'
+	  'stickit'			:	'vendor/backbone.stickit/backbone.stickit',
+	  'bootsrap'		:	'vendor/bootstrap/dist/js/bootstrap.min',
+	  'jquery-ui'		:	'vendor/jquery-ui/jquery-ui.min'
   },
   shim: {
 		'backbone':{
@@ -27,6 +29,7 @@ requirejs.config({
 requirejs([
   'app',
   'underscore',
+  'jquery-ui'
 ], function(App){
   App.initialize();
 });

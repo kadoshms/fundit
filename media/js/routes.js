@@ -4,24 +4,29 @@ define([
         'views/main',
         'views/campaign/create_campaign',
         'views/campaign/project_det',
-        'views/campaign/select_products'
+        'views/campaign/select_products',
+        'views/campaign/view_campaign'
 ], function(Backbone,
 		ViewManager,
 		Mainview,
 		CreateCampaignView,
 		ProjectDetView,
-		ProductsView
+		ProductsView,
+		ViewCampaign
 	){
 	return Backbone.Router.extend({
 	    routes: {
 	      '':'main',
-	      'campaign/create/:stage': 'createCampaign'
+	      'campaign/create/:stage': 'createCampaign',
+	      'campaign/view/:id' : 'viewCampaign'
 	    },
 	    initialize: function() {
-	    	console.log("??")
 	    },
 	    main	:	function(){
 	    	ViewManager.showView(Mainview);
+	    },
+	    viewCampaign : function(){
+	    	ViewManager.showView(ViewCampaign);
 	    },
 	    createCampaign: function(stage) {
 	    	var view = CreateCampaignView;
