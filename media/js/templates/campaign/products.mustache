@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group row">
+    <label for="inputKeyword" class="col-sm-2 form-control-label">Search by keyword</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputKeyword" placeholder="e.g Electric Guitar">
+    </div>
+  </div>
+  <div id="loading" class="hidden">Loading...</div>
+  <div id="products">
+   {{#products}}
+  	<div class="product">{{title}}</div>
+  	{{/products}}
+  </div>
+</form>

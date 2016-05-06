@@ -6,7 +6,8 @@ requirejs.config({
 	  'text'			:	'vendor/requirejs-plugins/lib/text',
 	  'snap'			:	'vendor/snap.svg/dist/snap.svg-min',
 	  'mustache'		:	'vendor/mustache/mustache.min',
-	  'backbone-validation'	:	'vendor/backbone-validation/dist/backbone-validation-amd-min'
+	  'backbone-validation'	:	'vendor/backbone-validation/dist/backbone-validation-amd-min',
+	  'stickit'			:	'vendor/backbone.stickit/backbone.stickit'
   },
   shim: {
 		'backbone':{
