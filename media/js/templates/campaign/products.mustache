@@ -1,33 +1,43 @@
-<div class="form-group row">
-	<label for="inputKeyword" class="col-sm-2 form-control-label">Searchby keyword</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="inputKeyword"
-			placeholder="e.g Electric Guitar">
+<div id="desc-wrapper">
+	<h2 class="step-title"><span class="step-yellow">Stage 3:</span> select products</h2>
+	<div>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mauris eros, malesuada in aliquet in, malesuada eget felis. Sed vitae finibus metus. Aenean tincidunt dolor sed dui iaculis luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum aliquet metus nec risus interdum faucibus. 
 	</div>
+</div>
+<div id="search-wrapper">
+<div class="form-group row">
+	<div class="input-group">
+	  <input type="text" id="inputKeyword" class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+	  <span class="input-group-addon green-addon" id="basic-addon1">
+	  	<span class="fa fa-search"></span>
+	  </span>	
+	</div>	
+</div>
 </div>
 <div id="loading" class="hidden">Loading...</div>
 
 <div id="products-wrapper">
 
 <div id="products" class="row list-group">
-{{#products}}
-	<div class="item col-xs-4 col-lg-4" data-itemid="{{itemId}}">
-		<div class="thumbnail">
-			<img class="group list-group-image" src="{{galleryURL}}" alt="" />
-			<div class="caption">
-<!-- 				<h4 class="group inner list-group-item-heading">{{title}}</h4> -->
-				<p class="group inner list-group-item-text">{{title}}123</p>
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<p class="lead">${{sellingStatus.convertedCurrentPrice.amount}}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-{{/products}}
-</div>
-<div id="selected-products">
+      <div class="row item-list">
+            <div class="col-lg-12">
+                <h1 class="page-header">Select items</h1>
+            </div>
+			{{#products}}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb item" data-itemid="{{itemId}}">
+                <div class="thumbnail">
+                	<div class="price">${{sellingStatus.convertedCurrentPrice.amount}}</div>
+                    <img class="img-responsive" src="{{galleryURL}}" alt="">
+                    <div class="product-title">bla bla</div>
+                </div>
+            </div>
+            {{/products}}
+            {{^products}}
+            	No items to display.
+            {{/products}}
+        </div>
+<div id="selected-products" style="text-align:center">
+	<h1 class="page-header">Total Amount: <span id="totalAmount">{{summary.totalAmount}}</span><span class="dollar">$</span></h1>
 </div>
 
 </div>

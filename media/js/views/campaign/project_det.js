@@ -26,7 +26,8 @@ define([
 		},
 		next:	function(){
 			this.model.save().done(function(){
-				Backbone.history.navigate('campaign/create/products');
+				console.log(Backbone.history)
+				Backbone.history.navigate('campaign/create/products', {trigger:true});
 			});
 		},
 		render	:	function(){

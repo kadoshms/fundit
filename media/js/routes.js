@@ -20,9 +20,11 @@ define([
 	      'campaign/create/:stage': 'createCampaign',
 	      'campaign/view/:id' : 'viewCampaign'
 	    },
+//	    pushState:true,
 	    initialize: function() {
 	    },
 	    main	:	function(){
+	    	console.log("#@!23")
 	    	ViewManager.showView(Mainview);
 	    },
 	    viewCampaign : function(){

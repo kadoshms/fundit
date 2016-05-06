@@ -25,6 +25,8 @@ body{
 
 #products{
 	width	:	100%;
+	margin-left	:	0px !important;
+	margin-right: 0px !important;
 }
 
 #selected-products{
@@ -58,7 +60,9 @@ body{
 	border : 1px solid #ddd;
 	width	:	100px;
 	height	:	100px;
-	padding	:	3px;
+	padding-left:0 !important;
+	padding-right:0 !important;
+	padding	:	3px !important;
 }
 .selected-thumb-img{
 	width	:	100%;
@@ -101,6 +105,8 @@ body{
 }
 .item-list{
 	width	:	100%;
+	margin-left:	0px !important;
+	margin-right:	0px !important;
 }
 
 #header{
@@ -121,7 +127,7 @@ body{
 }
 
 #search-wrapper, #desc-wrapper, .wrapper{
-	width	:	50%;
+	width	:	60%;
 	margin	:	auto;
 }
 #desc-wrapper{
