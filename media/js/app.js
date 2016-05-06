@@ -3,19 +3,16 @@ define([
   'jquery',
   'backbone',
   'views/main',
-  'routes'
-], function($, Backbone, Main, Routes){
-	
-	 Backbone.history.start({
-		 pushState: true
-	 });
+  'routes',
+  'view_manager'
+], function($, Backbone, Main, Routes, ViewManager){
   var initialize = function(){
-	  var main = new Main.View();
-	  main.render();
+	  var app_router = new Routes();
+      Backbone.history.start();
+      return app_router;
   }
 
   return {
-    initialize: initialize,
-    routes: new Routes()
+    initialize: initialize
   };
 });

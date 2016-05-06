@@ -3,7 +3,7 @@ define([
          'backbone',
          'mustache',
          'classes/campaign',
-         'text!templates/main.mustache'
+         'text!templates/campaign/create.mustache'
 ], function($, Backbone, Mustache, Campaign, Template){
 	
 	

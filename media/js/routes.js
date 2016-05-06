@@ -1,14 +1,22 @@
-define(['backbone'], function(Backbone){
+define([
+        'backbone',
+        'view_manager',
+        'views/main',
+        'views/create_campaign'
+], function(Backbone, ViewManager, Mainview, CreateCampaignView){
 	return Backbone.Router.extend({
 	    routes: {
-	      'campaign/create': 'openList'
+	      '':'main',
+	      'campaign/create': 'createCampaign'
 	    },
-
 	    initialize: function() {
+	    	console.log("??")
 	    },
-
-	    openList: function(id) {
-	    	alert('!!')
+	    main	:	function(){
+	    	ViewManager.showView(Mainview);
+	    },
+	    createCampaign: function(id) {
+	    	ViewManager.showView(CreateCampaignView);
 	    }
 	  });
 });
