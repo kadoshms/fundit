@@ -8,6 +8,7 @@
 
 body{
 	font-family:'Quicksand' !important;
+	background	:	#FCFCFC !important;
 }
 
 .hidden{
@@ -23,13 +24,32 @@ body{
 }
 
 #products{
-	width	:	65%;
-	float	:	right;
+	width	:	100%;
 }
 
 #selected-products{
-	width	:	28%;
-	float	:	left;
+	width	:	100%;
+}
+
+.item{
+	border:none;
+}
+.thumbnail{
+	border:none !important;
+	box-shadow: 0 4px 4px rgba(0,0,0,0.15);
+	padding	:	0px !important;
+}
+
+.thumbnail:hover{
+	box-shadow: 0 4px 4px rgba(83,167,224,0.15);
+	cursor:pointer;
+}
+
+.price{
+	background	:	rgba(1,1,1,0.7);
+	color		:	#FFF;
+	width		:	40%;
+	text-align	:	center;
 }
 
 .selectedItem {
@@ -38,7 +58,7 @@ body{
 	border : 1px solid #ddd;
 	width	:	100px;
 	height	:	100px;
-	padding	:	5px;
+	padding	:	3px;
 }
 .selected-thumb-img{
 	width	:	100%;
@@ -49,6 +69,17 @@ body{
 .removeItem{
 	display	:	none !important;
 }
+
+.removeItemIcon{
+ position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size:20px !important;
+  cursor:pointer;
+}
+.removeItemIcon:hover{
+	opacity	:	0.7;
+}
 .selectedItem:hover .removeItem{
 	display : block !important;
 	width	:	100%;
@@ -56,4 +87,75 @@ body{
 	color		:	#FFF;
 	height		:	100%;
 	text-align	:	center;
+}
+
+.product-title{
+	text-align	:	center;
+	text-decoration	:	none;
+	color	:	#000;
+}
+
+#products-wrapper{
+	width:	60%;
+	margin:auto;
+}
+.item-list{
+	width	:	100%;
+}
+
+#header{
+	height	:	200px;
+	text-align	:	center;
+	border-bottom:	1px solid #CCCCCC;
+}
+
+#header img{
+	width	:	150px;
+	margin	:	auto;
+	margin-top:	50px;
+}
+
+
+#main-content{
+	margin-top	:	20px;
+}
+
+#search-wrapper, #desc-wrapper, .wrapper{
+	width	:	50%;
+	margin	:	auto;
+}
+#desc-wrapper{
+	margin-bottom	:	30px;
+	margin-top		:	30px;
+}
+
+.step-title{
+	padding-bottom	:	20px;
+}
+
+.step-yellow{
+	color	:	#efc802;
+}
+
+.thumb-img{
+	width	:	120px !important;
+	height	:	120px !important;
+}
+
+.green-addon{
+	background	:	#9FCD30 !important;
+	color		:	#FFF !important;
+	width		:	50px;
+}
+#inputKeyword{
+	padding	:	25px !important;
+/* 	width	:	500px; */
+}
+
+#not-registered-pno{
+	display	:	none;
+}
+
+#totalAmount, .dollar{
+	color	:	#9FCD30;
 }
