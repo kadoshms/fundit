@@ -25,7 +25,8 @@ define([
 		initialize: function(){
 			this.model = new Campaign.Model();
 		},
-		next:	function(){
+		next:	function(e){
+			e.preventDefault();
 			var campaign_id = parseInt(Math.random() * 10000);
 			this.model.set({campaign_id : org_id});
 			this.model.save().done(function(response){

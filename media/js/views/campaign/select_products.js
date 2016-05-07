@@ -15,7 +15,8 @@ define([
 		events:{
 			'blur #inputKeyword' : 'search',
 			'click .item'	:	'openModal',
-			'click .removeItem' :  'removeItem'
+			'click .removeItem' :  'removeItem',
+			'click #next-btn'	:	'finish'
 		},
 		openModal: function(e){
 			var id = $(e.currentTarget).data('itemid');
@@ -102,6 +103,9 @@ define([
 				this.$el.find('#selected-products').find('#selected-list').append(Mustache.to_html(SelectedThumbTemplate, model.toJSON()));
 				this.$el.find('.selectedItem').css('display','block')
 			}
+		},
+		finish	:	function(){
+			Backbone.history.navigate('/', {trigger:true});
 		},
 		render	:	function(){
 			this.$el.html(Mustache.to_html(Template, { products : this.getLimitedProducts(), summary : this.summary.toJSON()}));

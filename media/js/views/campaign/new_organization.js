@@ -23,7 +23,8 @@ define([
 		initialize: function(){
 			this.model = new Organization.Model();
 		},
-		next	:	function(){
+		next	:	function(e){
+			e.preventDefault();
 			var org_id = parseInt(Math.random() * 10000);
 			this.model.set({organizationid : org_id});
 			this.model.save(this.model.toJSON(),{
