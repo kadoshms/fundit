@@ -11,10 +11,18 @@ define([
 	exports.View = Backbone.View.extend({
 		el	: '#main-content',
 		events:{
-			'blur #inputKeyword' : 'search'
+			'blur #inputKeyword' : 'search',
+			'click .donate-now'	: 'donateNow'
 		},
 		initialize: function(){
 			this.perks = [{val:5},{val:15},{val:35}];
+		},
+		donateNow	:	function(e){
+			var amount = $(e.currentTarget).data('donation');
+			var form = '<form id="donate-now" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post"><input type="text" name="item_name" value="donation"><input type="text" name="amount" value="'+amount+'"><input type="text" name="currency_code" value="USD"></form>';
+			
+			$(e.currentTarget).append(form)
+			this.$el.find('#donate-now').submit();
 		},
 		renderChart	: function(){
 			var series = [];
@@ -72,7 +80,7 @@ define([
 		                    distance : -250,
 		                    useHTML:true,
 		                    formatter: function() {
-		                    	console.log(this)
+//		                    	console.log(this)
 		                        var dlabel = "<span style='position:relative;left:50px;color:"+this.color+"'>"+this.series.name;
 		                        dlabel +=" "+ this.y + '% </span>';
 		                            return dlabel
