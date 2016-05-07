@@ -22,7 +22,7 @@
 <div id="products" class="row list-group">
       <div class="row item-list">
             <div class="col-lg-12">
-                <h1 class="page-header">Select items</h1>
+                <h1 class="page-header">Featured Campaigns</h1>
             </div>
             <div id="actual-items">
 			{{#campaigns}}
@@ -35,10 +35,13 @@
                     	<h3>{{title}}</h3>
                     	<h5>by Latet</h5>
                     </div>
-                     <div class="camp-prog-box">
-                    	<div class="prog left">${{moneyraised}}</div>
-                    	<div class="prog right"><span class="prog-from">{{goodsraised}}</span> out of <span class="prog-to">{{goodstoraise}}</span></div>
-                    	<div style="clear:both"></div>
+                     <div class="camp-prog-box" style="width:100%">
+						<table>
+							<tr>
+								<td><h4 class="green">${{moneyraised}}</h4><h6>out of <span class="blue">{{moneytoraise}}</span></h6></td>
+								<td><h4><span class="yellow">{{goodsraised}}</span> out of <span class="red">{{goodstoraise}}</span></h4><h6>products funded</h6></td>
+							</tr>
+						</table>
                     </div>                   
                 </div>
             </div>

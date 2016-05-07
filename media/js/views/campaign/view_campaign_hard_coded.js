@@ -12,32 +12,41 @@ define([
 		el	: '#main-content',
 		events:{
 			'blur #inputKeyword' : 'search',
-			'click .donate-now'	: 'donateNow'
+			'click .donate-now'	: 'donateNow',
+			'click .productLink' : 'donateNow'
 		},
 		initialize: function(){
 			this.perks = [{val:5},{val:15},{val:35}];
 			this.products = [
 			    {
-			    	price	:	'140',
+			    	price	:	8507,
 			    	title	:	'Yamaha Guitar',
-			    	image	:	'media/image/camp/guitar.jpg'
+			    	image	:	'media/image/camp/guitar.jpg',
+			    	prcnt	:	83,
+			    	link	:	'http://www.ebay.com/itm/Free-Shipping-Used-Gibson-ES-335TD-67-Electric-Guitar-/162062485660?hash=item25bbad489c%3Ag%3AX~kAAOSwxp9W3vcR'
 			    },
 			    {
-			    	price	:	'200',
+			    	price	:	1649,
 			    	title	:	'A brand new Drum set',
-			    	image	:	'media/image/camp/drums.jpg'
+			    	image	:	'media/image/camp/drums.jpg',
+			    	link	:	'http://www.ebay.com/itm/Brand-New-Premier-XPK-Modern-Rock-22-Drum-Kit-/230800864359?hash=item35bccdb467%3Am%3AmpqU2KnRxUs-hHXhc4a3G6w',
+			    	prcnt	:	16,
+			    		
 			    },
 			    {
-			    	price	:	'120',
+			    	price	:	148,
 			    	title	:	'Electric Didgiridoo',
-			    	image	:	'media/image/camp/didg.jpg'
+			    	image	:	'media/image/camp/didg.jpg',
+			    	link	:	'http://www.ebay.com/itm/Didgeridoo-48-inch-key-D-Authentic-handcrafted-Australian-Eucalyptus-/252377785828?hash=item3ac2e365e4%3Ag%3AvJMAAOSwiYFXGf2K',
+			    	prcnt	:	1,
+			    	funded	:	true,
 			    }
 			                 
 			];
 		},
 		donateNow	:	function(e){
 			var amount = $(e.currentTarget).data('donation');
-			var form = '<form id="donate-now" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" style="display:hidden"><input type="hidden" name="business" value="kadoshms-facilitator@gmail.com"><input type="hidden" name="item_name" value="Donation"><input type="hidden" name="amount" value="'+amount+'"><input type="hidden" name="currency_code" value="USD"></form>';
+			var form = '<form id="donate-now" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" style="display:hidden"><input type="hidden" name="business" value="kadoshms-facilitator@gmail.com"><input type="hidden" name="item_name" value="Donation"><input type="hidden" name="amount" value="'+amount+'"><input type="hidden" name="currency_code" value="USD"><input type="hidden" name="cmd" value="_xclick"></form>';
 			
 			$(e.currentTarget).append(form)
 			this.$el.find('#donate-now').submit();
@@ -45,12 +54,10 @@ define([
 		},
 		renderChart	: function(){
 			var series = [];
-			var values = [10,12,20];
-			var products = ['Guitar', 'Drums', 'Didgridoo'];
-			for(var i=0;i<values.length;i++){
+			for(var i=0;i<this.products.length;i++){
 				series.push({
-					name : products[i],
-					data : [values[i]]
+					name : this.products[i].title,
+					data : [this.products[i].prcnt]
 				});
 			}
 			this.$el.find('#chart').highcharts({
@@ -100,8 +107,8 @@ define([
 		                    distance : -250,
 		                    useHTML:true,
 		                    formatter: function() {
-		                        var dlabel = "<span style='position:relative;left:50px;color:"+this.color+"'>"+this.series.name;
-		                        dlabel +=" "+ this.y + '% </span>';
+		                        var dlabel = "<div style='width:40px;position:relative;left:40px;color:"+this.color+"'>"+this.series.name;
+		                        dlabel +=" "+ this.y + '% </div>';
 		                            return dlabel
 		                     },
 		                },

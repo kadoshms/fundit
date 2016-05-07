@@ -26,15 +26,22 @@
 		</div>
 		{{/perks}}
 		{{#products}}
+		<a href="{{link}}" target="_blank">
 		<div class="thumbnail donate-prod-box">
 			<div class="donateInnerWrap">
 				<div class="donateProductImg" style="background:url('{{image}}')">
 					<div class="price">${{price}}</div>
 				</div>
 				<div class="innerText">{{title}}</div>
-				<div class="innerLink blue">Donate</div>
+				{{^funded}}
+				<div class="innerLink blue productLink" data-donation="{{price}}">Donate</div>
+				{{/funded}}
+				{{#funded}}
+				<div class="green" style="text-align:center">Funded!</div>
+				{{/funded}}
 			</div>
 		</div>
+		</a>
 		{{/products}}		
 	</div>
 	

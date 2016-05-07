@@ -164,7 +164,7 @@ body{
 	padding-bottom	:	20px;
 }
 
-.step-yellow{
+.step-yellow, .yellow{
 	color	:	#efc802;
 }
 
@@ -245,6 +245,7 @@ body{
 	box-shadow: none !important;
 	transition: all 0.6s !important;
 	height:100%;
+	max-width:none !important;
 }
 
 .campaign-by{
@@ -257,7 +258,11 @@ body{
 
 .campaign-box h3{
 	text-align	:	center;
-	font-size	:	20px;
+	font-size	:	18px;
+}
+
+.red{
+	color	: #e83a3a
 }
 
 .camp-desc-box{
@@ -271,10 +276,12 @@ body{
 
 .prog{
 	width	:	48%;
-	font-size	:	20px;
+/* 	font-size	:	20px; */
 	text-align:center;
 }
-
+.prog h4{
+	font-size:20px;
+}
 .prog.left{
 	float	:	left;
 	color	:	#9FCD30;
@@ -395,6 +402,10 @@ body{
 	margin	:	auto;
 }
 
+.donate-prod-box:hover div{
+	  text-decoration: none;
+}
+
 .amutaDesc{
 	height		:	600px;
 	padding		:	10px;
@@ -424,6 +435,15 @@ body{
 
 #carousel .camp-prog-box{
 	padding	:	10px !important;
+}
+
+.camp-prog-box table{
+	width	:	100%;
+}
+
+.camp-prog-box table td{
+	width	:	50%;
+	text-align:center;
 }
 
 #logo{
