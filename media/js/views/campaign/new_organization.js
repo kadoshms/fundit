@@ -26,8 +26,10 @@ define([
 		next	:	function(){
 			var org_id = parseInt(Math.random() * 10000);
 			this.model.set({organizationid : org_id});
-			this.model.save().done(function(){
-				Backbone.history.navigate('campaign/create/project', {trigger:true});
+			this.model.save(this.model.toJSON(),{
+				success	:	function(model, response){
+					Backbone.history.navigate('campaign/create/project?oid='+response.organizationid, {trigger:true});
+				}
 			});
 		},
 		render: function(){

@@ -20,17 +20,18 @@ define([
 	      'campaign/create/:stage': 'createCampaign',
 	      'campaign/view/:id' : 'viewCampaign'
 	    },
-//	    pushState:true,
+	    pushState:true,
 	    initialize: function() {
+	    	console.log(Backbone.history.fragment)
 	    },
 	    main	:	function(){
-	    	console.log("#@!23")
 	    	ViewManager.showView(Mainview);
 	    },
 	    viewCampaign : function(){
 	    	ViewManager.showView(ViewCampaign);
 	    },
 	    createCampaign: function(stage) {
+	    	console.log("stage")
 	    	var view = CreateCampaignView;
 	    	switch(stage){
 	    	default:

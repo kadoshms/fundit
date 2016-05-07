@@ -18,20 +18,22 @@ define([
 		bindings:{
 			'#inputTitle'			: 'title',
 			'#inputSubTitle'		: 'subtitle',
-			'#inputMedia'			: 'media',
-			'#inputDesc'			: 'desc'
+			'#inputMedia'			: 'video',
+			'#inputDesc'			: 'details',
+			'#inputRaise'			: 'moneytoraise'
 		},
 		initialize: function(){
 			this.model = new Campaign.Model();
 		},
 		next:	function(){
-			this.model.save().done(function(){
-				console.log(Backbone.history)
-				Backbone.history.navigate('campaign/create/products', {trigger:true});
+			this.model.save().done(function(response){
+				console.log(response)
+//				Backbone.history.navigate('campaign/create/products', {trigger:true});
 			});
 		},
 		render	:	function(){
 			this.$el.html(Mustache.to_html(Template, {}));
+			this.stickit();
 			return this;
 		}
 	});

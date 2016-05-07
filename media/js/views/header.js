@@ -9,6 +9,10 @@ define([
 	
 	exports.View = Backbone.View.extend({
 		events	:	{
+			'click #new-campaign' : 'newCampaign'
+		},
+		newCampaign	:	function(){
+			Backbone.history.navigate('campaign/create/new', {trigger:true});
 		},
 		render	:	function(){
 			this.$el.html(Mustache.to_html(Template, {}));
