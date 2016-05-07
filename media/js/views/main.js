@@ -11,40 +11,20 @@ define([
 
 	exports.View = Backbone.View.extend({
 		el	: '#main-content',
+		events:{
+			'click .campaign-box'	: 'openCampaign'
+		},
+		openCampaign	:	function(e){
+			var id = $(e.currentTarget).data('id');
+			Backbone.history.navigate('campaign/view/'+id,{trigger:true});
+		},
+		initialize: function(){
+			this.collection = new Campaign.Collection();
+			this.collection.fetch();
+			this.listenTo(this.collection, "change add", this.render)
+		},
 		render	:	function(){
-			var campaigns = [
-			     {
-			    	 title	:	'Music Room',
-			    	 subtitle : 'Help us establish a new music room!',
-			    	 image	:	'http://africa-facts.org/wp-content/uploads/2015/01/african-kids.jpg'
-			     },
-			     {
-			    	 title	:	'Music Room',
-			    	 subtitle : 'Help us establish a new music room!',
-			    	 image	:	'http://teencitytalks.com/wp-content/uploads/2014/09/kid-crying.jpg'
-			     },
-			     {
-			    	 title	:	'Computers',
-			    	 subtitle: 'Get computers',
-			    	 image	:	'http://news.xinhuanet.com/english/2016-01/09/CnbbeeE005004_20160109_NBMFN0A001_11n.jpg'
-			     },
-			     {
-			    	 title	:	'Music Room',
-			    	 subtitle : 'Help us establish a new music room!',
-			    	 image	:	'http://africa-facts.org/wp-content/uploads/2015/01/african-kids.jpg'
-			     },
-			     {
-			    	 title	:	'Music Room',
-			    	 subtitle : 'Help us establish a new music room!',
-			    	 image	:	'http://teencitytalks.com/wp-content/uploads/2014/09/kid-crying.jpg'
-			     },
-			     {
-			    	 title	:	'Computers',
-			    	 subtitle: 'Get computers',
-			    	 image	:	'http://news.xinhuanet.com/english/2016-01/09/CnbbeeE005004_20160109_NBMFN0A001_11n.jpg'
-			     }
-			];
-			this.$el.html(Mustache.to_html(Template, {campaigns:campaigns}));
+			this.$el.html(Mustache.to_html(Template, {campaigns:this.collection.toJSON()}));
 			return this;
 		}
 	});

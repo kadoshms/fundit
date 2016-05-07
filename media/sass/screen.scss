@@ -232,11 +232,7 @@ body{
 }
 
 .campaign-box{
-	box-shadow: 0 4px 4px rgba(0,0,0,0.15) !important;
-/* 	margin	:	30px; */
-/* 	height	:	350px; */
-	padding	:	0px !important;
-	margin-bottom	:	50px;
+
 }
 
 .campaign-img{
@@ -280,7 +276,23 @@ body{
 	float	:	right;
 }
 
+.prog-from{
+	color	:	#efc802;
+}
+.prog-to{
+	color	:	#ed494b;
+}
+
 #main-wrapper{
 	width	:	90%;
 	margin	:	auto;
+}
+
+#footer{
+	width	:	60%;
+	font-size:11px;
+	margin	:	auto;
+	text-align:center;
+	margin-top	:	10px;
+	margin-bottom	:	10px;
 }

@@ -8,6 +8,10 @@ define([
 	exports.Model = Backbone.Model.extend({
 		url	:	config.api+'campaign'
 	});
-	
+
+	exports.Collection = Backbone.Collection.extend({
+		url	:	config.api+'campaign'
+	});
+
 	return exports;
 });
