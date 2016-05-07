@@ -1,1 +1,32 @@
-nimrodss
+<div class="col-lg-3 col-md-4 col-xs-6 thumb item">
+	<h3 class="campaign-title">Donate</h3>
+	<div class="donate-description">By amount</h2>
+	<div class="thumbnail">
+		<h2 class="donate_small_title">donate $5 or more</h2>
+		<div class="donate-description">{{}}</h2>
+		<div class="donate-button">Donate</div>
+	</div>
+	<div class="thumbnail">
+		<h2 class="donate_small_title">donate $10 or more</h2>
+		<div class="donate-description">{{}}</h2>
+		<div class="donate-button">Donate</div>
+	</div>
+	<div class="thumbnail">
+		<h2 class="donate_small_title">donate $15 or more</h2>
+		<div class="donate-description">{{}}</h2>
+		<div class="donate-button">Donate</div>
+	</div>
+	
+	<h3 class="campaign-title">Donate</h3>
+	<div class="donate-description">By product</h2>
+	{{#products_to_donate}}
+	<div class="thumbnail">
+		<h2 class="donate_small_title">{{}}</h2>
+		<div class="donate-description">{{}}</h2>
+		<div class="fund-state">{{}}</div>
+	</div>
+	{{/products_to_donate}}
+</div>
+
+<div class="col-lg-6 col-md-4 col-xs-6 thumb item">
+</div>
