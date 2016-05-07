@@ -5,14 +5,16 @@ define([
         'views/campaign/create_campaign',
         'views/campaign/project_det',
         'views/campaign/select_products',
-        'views/campaign/view_campaign'
+        'views/campaign/view_campaign',
+        'views/campaign/view_campaign_hard_coded'
 ], function(Backbone,
 		ViewManager,
 		Mainview,
 		CreateCampaignView,
 		ProjectDetView,
 		ProductsView,
-		ViewCampaign
+		ViewCampaign,
+		ViewCampaignHardCoded
 	){
 	return Backbone.Router.extend({
 	    routes: {
@@ -22,13 +24,15 @@ define([
 	    },
 	    pushState:true,
 	    initialize: function() {
-	    	console.log(Backbone.history.fragment)
 	    },
 	    main	:	function(){
 	    	ViewManager.showView(Mainview);
 	    },
-	    viewCampaign : function(){
-	    	ViewManager.showView(ViewCampaign);
+	    viewCampaign : function(id){
+	    	if(id == 2)
+	    		ViewManager.showView(ViewCampaignHardCoded);
+	    	else
+	    		ViewManager.showView(ViewCampaign);
 	    },
 	    createCampaign: function(stage) {
 	    	console.log("stage")

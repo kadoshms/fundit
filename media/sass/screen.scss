@@ -270,7 +270,7 @@ body{
 }
 
 .prog{
-	width	:	40%;
+	width	:	48%;
 	font-size	:	20px;
 	text-align:center;
 }
@@ -379,7 +379,7 @@ body{
 
 .organizationBox{
 	box-shadow: 0 4px 4px rgba(0,0,0,0.15);
-	height:600px;
+	height:100%;
 	width:80%;
 	float:right;
 }
@@ -396,7 +396,7 @@ body{
 }
 
 .amutaDesc{
-	height		:	400px;
+	height		:	600px;
 	padding		:	10px;
 	text-align	:	center;
 }
@@ -424,6 +424,10 @@ body{
 
 #carousel .camp-prog-box{
 	padding	:	10px !important;
+}
+
+#logo{
+	cursor:pointer;
 }
 
 .slick-prev:before, .slick-next:before { 

@@ -26,9 +26,10 @@ define([
 			this.model = new Campaign.Model();
 		},
 		next:	function(){
+			var campaign_id = parseInt(Math.random() * 10000);
+			this.model.set({campaign_id : org_id});
 			this.model.save().done(function(response){
-				console.log(response)
-//				Backbone.history.navigate('campaign/create/products', {trigger:true});
+				Backbone.history.navigate('campaign/create/products', {trigger:true});
 			});
 		},
 		render	:	function(){
