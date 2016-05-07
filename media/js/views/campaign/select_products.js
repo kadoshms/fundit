@@ -15,7 +15,7 @@ define([
 		events:{
 			'blur #inputKeyword' : 'search',
 			'click .item'	:	'openModal',
-			'click .removeItem' :  'removeItem',
+			'click .removeItemIcon' :  'removeItem',
 			'click #next-btn'	:	'finish'
 		},
 		openModal: function(e){
@@ -70,10 +70,10 @@ define([
 			this.$el.find('div[data-itemid="'+id+'"]').find('.item-img').removeClass('selected');
 			this.$el.find('div[data-itemid="'+id+'"]').find('.checkSelected').addClass('hidden');
 			
-			this.$el.find('#selected-products').find('[data-itemid="'+model.get('unique_id').toString()+'"]')
-				.hide( "scale", {percent: 0, direction: 'both' }, 500 );
-			;
-			
+//			this.$el.find('#selected-products').find('[data-uniqueId="'+model.get('unique_id').toString()+'"]')
+//				.hide( "scale", {percent: 0, direction: 'both' }, 500 );
+//			;
+//			
 			var currentTotal = this.summary.get("totalAmount");
 			var price = model.get("sellingStatus").convertedCurrentPrice.amount;
 			var total = Math.max(currentTotal-price, 0);
@@ -83,6 +83,7 @@ define([
 			var id = $(e.currentTarget).data('itemid');
 			var model = self_view.selectedProducts.findWhere({unique_id:id.toString()});
 			self_view.selectedProducts.remove(model);
+			$(e.currentTarget).parents('.selectedItem').hide( "scale", {percent: 0, direction: 'both' }, 500 );
 		},
 		getLimitedProducts: function(){
 			var products = [];

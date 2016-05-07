@@ -46,7 +46,7 @@ define([
 		},
 		donateNow	:	function(e){
 			var amount = $(e.currentTarget).data('donation');
-			var form = '<form id="donate-now" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" style="display:hidden"><input type="hidden" name="business" value="kadoshms-facilitator@gmail.com"><input type="hidden" name="item_name" value="Donation"><input type="hidden" name="amount" value="'+amount+'"><input type="hidden" name="currency_code" value="USD"><input type="hidden" name="cmd" value="_xclick"></form>';
+			var form = '<form id="donate-now" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" style="display:hidden"><input type="hidden" name="business" value="kadoshms-facilitator@gmail.com"><input type="hidden" name="item_name" value="Donation"><input type="hidden" name="amount" value="'+amount+'"><input type="hidden" name="currency_code" value="USD"><input type="hidden" name="cmd" value="_xclick"><input type="hidden" name="return" value="http://fundit.com" /></form>';
 			
 			$(e.currentTarget).append(form)
 			this.$el.find('#donate-now').submit();
