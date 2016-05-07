@@ -19,6 +19,7 @@ define([
 	return Backbone.Router.extend({
 	    routes: {
 	      '':'main',
+	      'home':'main',
 	      'campaign/create/:stage': 'createCampaign',
 	      'campaign/view/:id' : 'viewCampaign'
 	    },

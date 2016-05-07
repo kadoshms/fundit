@@ -7,12 +7,15 @@
      </div>
      <div class="camp-desc-box">
 	     <h3>{{title}}</h3>
-	     <h5>by Latet</h5>
+	     <h5>by {{organization_name}}</h5>
      </div>
-     <div class="camp-prog-box">
-	     <div class="prog left">${{moneyraised}}</div>
-	     <div class="prog right"><span class="prog-from">{{goodsraised}}</span> out of <span class="prog-to">{{goodstoraise}}</span></div>
-     <div style="clear:both"></div>
+     <div class="carousel-prog" style="width:100%;height:80px">
+		<table>
+			<tr>
+				<td><h4 class="green">${{moneyraised}}</h4><h6>out of <span class="blue">{{moneytoraise}}</span></h6></td>
+				<td><h4><span class="yellow">${{goodsraised}}</span> out of <span class="red">{{goodstoraise}}</span></h4><h6>products funded</h6></td>
+			</tr>
+		</table>
      </div>                   
 	</div>
 </div>

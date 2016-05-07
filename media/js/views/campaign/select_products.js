@@ -106,7 +106,7 @@ define([
 			}
 		},
 		finish	:	function(){
-			Backbone.history.navigate('/', {trigger:true});
+			Backbone.history.navigate('home', {trigger:true});
 		},
 		render	:	function(){
 			this.$el.html(Mustache.to_html(Template, { products : this.getLimitedProducts(), summary : this.summary.toJSON()}));
