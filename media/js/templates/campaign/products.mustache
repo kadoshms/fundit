@@ -24,7 +24,7 @@
             </div>
             <div id="actual-items">
 			{{#products}}
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb item" data-itemid="{{itemId}}">
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb item" data-itemid="{{unique_id}}">
                 <div class="thumbnail">
                 	<div class="price">${{sellingStatus.convertedCurrentPrice.amount}}</div>
                 	<div class="checkSelected hidden"><span class="fa fa-check"></span></div>
@@ -40,8 +40,11 @@
             {{/products}}
         </div>
         <div id="loading" class="hidden" style="width:100%;text-align:center"><img src="media/image/loader.gif" class="loader" /></div>
-<div id="selected-products" style="text-align:center">
+	</div>
+</div>
+<div id="selected-products" style="text-align:center;">
 	<h1 class="page-header">Total Amount: <span id="totalAmount">{{summary.totalAmount}}</span><span class="dollar">$</span></h1>
+	<div id="selected-list"></div>
+</div>
 </div>
 
-</div>
