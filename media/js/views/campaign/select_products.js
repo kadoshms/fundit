@@ -40,13 +40,19 @@ define([
 		search	:	function(e){
 			var self = this;
 			var keyword = $(e.currentTarget).val();
+			this.$el.find('#no-items').addClass('hidden');
 			this.$el.find('#loading').removeClass('hidden');
-			
+			this.$el.find('#actual-items').empty();
 			this.collection.fetch({ data: $.param({ keyword: keyword }) }).done(function(){
 				self.$el.find('#loading').addClass('hidden');
 			});
 		},
 		addSelected	:	function(model){
+			
+			//set selected
+			var id = model.get('itemId');
+			this.$el.find('div[data-itemid="'+id+'"]').find('.item-img').addClass('selected');
+			this.$el.find('div[data-itemid="'+id+'"]').find('.checkSelected').removeClass('hidden');
 			this.$el.find('#selected-products').append(Mustache.to_html(SelectedThumbTemplate, model.toJSON()));
 			this.$el.find('#selected-products').find('[data-itemid="'+model.get('itemId').toString()+'"]')
 				.fadeIn("normal")
@@ -58,6 +64,10 @@ define([
 			this.summary.set({ totalAmount : (currentTotal+price) });
 		},
 		removeSelected	:	function(model){
+			var id = model.get('itemId');
+			this.$el.find('div[data-itemid="'+id+'"]').find('.item-img').removeClass('selected');
+			this.$el.find('div[data-itemid="'+id+'"]').find('.checkSelected').addClass('hidden');
+			
 			this.$el.find('#selected-products').find('[data-itemid="'+model.get('itemId').toString()+'"]')
 				.hide( "scale", {percent: 0, direction: 'both' }, 500 );
 			;

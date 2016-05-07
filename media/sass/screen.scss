@@ -97,6 +97,31 @@ body{
 	text-align	:	center;
 	text-decoration	:	none;
 	color	:	#000;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+}
+
+.item-img{
+	margin	:	auto;
+}
+
+.item-img.selected{
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+    opacity:0.5;
+}
+
+.checkSelected{
+    position: absolute;
+    left: 34%;
+    top: 25%;
+    font-size: 60px;
+    color	:	#9FCD30;
+    z-index	:	999;
 }
 
 #products-wrapper{
@@ -164,4 +189,12 @@ body{
 
 #totalAmount, .dollar{
 	color	:	#9FCD30;
+}
+
+#loading{
+	margin	:	auto;
+}
+
+.loader{
+	width	:	80px;
 }

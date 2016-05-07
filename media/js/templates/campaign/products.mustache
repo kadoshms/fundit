@@ -14,7 +14,6 @@
 	</div>	
 </div>
 </div>
-<div id="loading" class="hidden">Loading...</div>
 
 <div id="products-wrapper">
 
@@ -23,19 +22,24 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Select items</h1>
             </div>
+            <div id="actual-items">
 			{{#products}}
             <div class="col-lg-3 col-md-4 col-xs-6 thumb item" data-itemid="{{itemId}}">
                 <div class="thumbnail">
                 	<div class="price">${{sellingStatus.convertedCurrentPrice.amount}}</div>
-                    <img class="img-responsive" src="{{galleryURL}}" alt="">
-                    <div class="product-title">bla bla</div>
+                	<div class="checkSelected hidden"><span class="fa fa-check"></span></div>
+                    <div style="height:150px">
+                    	<img class="img-responsive item-img" src="{{galleryURL}}" alt="">
+                    </div>
+                    <div class="product-title">{{title}}</div>
                 </div>
             </div>
             {{/products}}
             {{^products}}
-            	No items to display.
+            	<span id="no-items">No items to display.</span>
             {{/products}}
         </div>
+        <div id="loading" class="hidden" style="width:100%;text-align:center"><img src="media/image/loader.gif" class="loader" /></div>
 <div id="selected-products" style="text-align:center">
 	<h1 class="page-header">Total Amount: <span id="totalAmount">{{summary.totalAmount}}</span><span class="dollar">$</span></h1>
 </div>
