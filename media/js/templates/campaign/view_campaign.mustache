@@ -1,32 +1,66 @@
-<div class="col-lg-3 col-md-4 col-xs-6 thumb item">
-	<h3 class="campaign-title">Donate</h3>
-	<div class="donate-description">By amount</h2>
-	<div class="thumbnail">
-		<h2 class="donate_small_title">donate $5 or more</h2>
-		<div class="donate-description">{{}}</h2>
-		<div class="donate-button">Donate</div>
+<div style="width:100%;float:left">
+	<div id="viewCampaignTitle">
+		<div class="campaignTitleWrap">
+			<div style="float:left">
+				<h2>Music Room</h2>
+				<h4 style="text-align:left">By tzlilei Lod</h4>
+			</div>
+			<div style="float:right">
+				<h2 class="green" style="text-align:right">$1232</h2>
+				<h4>out of <span class="blue">$7000</span></h4>
+			</div>
+		</div>
 	</div>
-	<div class="thumbnail">
-		<h2 class="donate_small_title">donate $10 or more</h2>
-		<div class="donate-description">{{}}</h2>
-		<div class="donate-button">Donate</div>
-	</div>
-	<div class="thumbnail">
-		<h2 class="donate_small_title">donate $15 or more</h2>
-		<div class="donate-description">{{}}</h2>
-		<div class="donate-button">Donate</div>
+	<div class="col-lg-3">
+		<div style="text-align:center;width:100%">
+			<h3 class="campaign-title">Donate</h3>
+			<h4 class="donate-description">By amount</h4>
+		</div>
+		{{#perks}}
+		<div class="thumbnail donate-box">
+			<div class="donateInnerWrap">
+				<div class="innerTitle">donate <b>${{val}}</b></div>
+				<div class="innerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+				<div class="innerLink blue">Donate</div>
+			</div>
+		</div>
+		{{/perks}}
+		{{#perks}}
+		<div class="thumbnail donate-prod-box">
+			<div class="donateInnerWrap">
+				<div class="donateProductImg" style="background:url('http://dreamatico.com/data_images/guitar/guitar-5.jpg')">
+					<div class="price">$123</div>
+				</div>
+				<div class="innerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+				<div class="innerLink blue">Donate</div>
+			</div>
+		</div>
+		{{/perks}}		
 	</div>
 	
-	<h3 class="campaign-title">Donate</h3>
-	<div class="donate-description">By product</h2>
-	{{#products_to_donate}}
-	<div class="thumbnail">
-		<h2 class="donate_small_title">{{}}</h2>
-		<div class="donate-description">{{}}</h2>
-		<div class="fund-state">{{}}</div>
+	
+	<div class="col-lg-6 video-container">
+		<iframe id="ytplayer" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0"/>
+		<div class="campaignDescBig">
+			"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+			
+			Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+			
+			"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+			
+			1914 translation by H. Rackham
+			
+			"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+		
+		</div>
 	</div>
-	{{/products_to_donate}}
-</div>
-
-<div class="col-lg-6 col-md-4 col-xs-6 thumb item">
+	<div class="col-lg-3">
+		<div id="chart"></div>
+		<div class="organizationBox">
+			<div class="amutaDesc">
+				<img src="media/image/lod_logo.png" />
+			</div>
+			<div class="mapImage"></div>
+		</div>
+	</div>
 </div>

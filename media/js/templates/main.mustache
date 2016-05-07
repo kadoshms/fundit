@@ -1,3 +1,23 @@
+<div id="carousel">
+{{#campaigns}}
+ 	<div class="col-lg-4 col-md-4 col-xs-6 thumb item campaign-box" data-id="{{_id}}">
+    <div class="thumbnail">
+     <div style="height:260px;overflow:hidden">
+     	<img class="img-responsive item-img carousel-img" src="{{image}}" alt="">
+     </div>
+     <div class="camp-desc-box">
+	     <h3>{{title}}</h3>
+	     <h5>by Latet</h5>
+     </div>
+     <div class="camp-prog-box">
+	     <div class="prog left">${{moneyraised}}</div>
+	     <div class="prog right"><span class="prog-from">{{goodsraised}}</span> out of <span class="prog-to">{{goodstoraise}}</span></div>
+     <div style="clear:both"></div>
+     </div>                   
+	</div>
+</div>
+{{/campaigns}}
+</div>
 <div id="main-wrapper">
 <div id="products" class="row list-group">
       <div class="row item-list">
@@ -8,7 +28,7 @@
 			{{#campaigns}}
             <div class="col-lg-4 col-md-4 col-xs-6 thumb item campaign-box" data-id="{{_id}}">
                 <div class="thumbnail">
-                    <div style="height:250px;overflow:hidden">
+                    <div style="height:260px;overflow:hidden">
                     	<img class="img-responsive item-img campaign-img" style="height:100%" src="{{image}}" alt="">
                     </div>
                     <div class="camp-desc-box">

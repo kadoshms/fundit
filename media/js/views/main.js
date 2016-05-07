@@ -3,7 +3,8 @@ define([
          'backbone',
          'mustache',
          'classes/campaign',
-         'text!templates/main.mustache'
+         'text!templates/main.mustache',
+         'carousel'
 ], function($, Backbone, Mustache, Campaign, Template){
 	
 	
@@ -25,6 +26,10 @@ define([
 		},
 		render	:	function(){
 			this.$el.html(Mustache.to_html(Template, {campaigns:this.collection.toJSON()}));
+			  $('#carousel').slick({
+				  autoplay	:	true,
+				  arrows: true
+			});
 			return this;
 		}
 	});

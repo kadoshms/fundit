@@ -9,7 +9,9 @@ requirejs.config({
 	  'backbone-validation'	:	'vendor/backbone-validation/dist/backbone-validation-amd-min',
 	  'stickit'			:	'vendor/backbone.stickit/backbone.stickit',
 	  'bootsrap'		:	'vendor/bootstrap/dist/js/bootstrap.min',
-	  'jquery-ui'		:	'vendor/jquery-ui/jquery-ui.min'
+	  'jquery-ui'		:	'vendor/jquery-ui/jquery-ui.min',
+	  'highcharts'		:	'vendor/highcharts/highcharts',
+	  'carousel'		:	'vendor/slick-carousel/slick/slick'
   },
   shim: {
 		'backbone':{
